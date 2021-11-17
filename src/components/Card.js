@@ -22,13 +22,13 @@ export default Card;
 
 const CardContainer = styled.div`
   width: 100%;
-  height: 350px;
+  height: 250px;
   position: relative;
   .imageContainer {
     background-color: hsl(195, 74%, 62%);
     overflow: hidden;
     padding-right: 10px;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 40%;
     border-radius: 10px;
@@ -45,7 +45,7 @@ const DataContainer = styled.div`
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  height: 87%;
+  height: 80%;
   position: absolute;
-  top: 13%;
+  top: 50px;
 `;

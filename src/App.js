@@ -8,13 +8,15 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <CardContainer>
-        <Card className="profile" />
-        <Card className="card" />
-        <Card className="card" />
-        <Card className="card" />
-        <Card className="card" />
-        <Card className="card" />
-        <Card className="card" />
+        <div class="profile">
+          <Card />
+        </div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </CardContainer>
     </div>
   );
@@ -23,18 +25,14 @@ function App() {
 export default App;
 
 const CardContainer = styled.div`
-  width: 100%;
   display: grid;
-  grid-gap: 30px 30px;
-  grid-auto-flow: column;
-  grid-template-areas:
-    "profile card card card"
-    "profile card card card";
-  .card {
-    grid-area: card;
-  }
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
+
   .profile {
-    grid-area: profile;
-    grid-row: 1 / 2;
+    grid-row: 1 / 4;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
   }
 `;
