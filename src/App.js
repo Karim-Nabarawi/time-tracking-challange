@@ -1,22 +1,21 @@
 import React from "react";
+
 import styled from "styled-components";
-import Card from "./components/Card";
 import GlobalStyles from "./components/GlobalStyles";
 
+import Card from "./components/Card";
+import data from "./data.json";
+
 function App() {
+  console.log(data);
   return (
     <div className="App">
       <GlobalStyles />
       <CardContainer>
-        <div class="profile">
+        <div className="profile">
           <Card />
         </div>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data && data.map((dat, index) => <Card key={index} {...dat} />)}
       </CardContainer>
     </div>
   );

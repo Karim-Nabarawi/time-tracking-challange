@@ -1,19 +1,20 @@
 import React from "react";
 
 import styled from "styled-components";
+import { cartData } from "../cartData";
 
 import logo from "../images/icon-play.svg";
 
-const Card = () => {
+const Card = ({ title, timeframes }) => {
   return (
-    <CardContainer>
+    <CardContainer color={cartData[title] && cartData[title].color}>
       <div className="imageContainer">
-        <img src={logo} alt="icon" />
+        <img src={cartData[title] && cartData[title].logo} alt="icon" />
       </div>
       <DataContainer>
-        <h3>Play</h3>
-        <h1>10hrs</h1>
-        <p>Last Week - 8hrs</p>
+        <h3>{title}</h3>
+        <h1>{timeframes && timeframes["weekly"].current}hrs</h1>
+        <p>Last Week - {timeframes && timeframes["weekly"].previous}hrs</p>
       </DataContainer>
     </CardContainer>
   );
@@ -25,7 +26,7 @@ const CardContainer = styled.div`
   height: 250px;
   position: relative;
   .imageContainer {
-    background-color: hsl(195, 74%, 62%);
+    background-color: ${(props) => (props.color ? props.color : "hsl(195, 74%, 62%)")};
     overflow: hidden;
     padding-right: 10px;
     position: relative;
@@ -48,4 +49,7 @@ const DataContainer = styled.div`
   height: 80%;
   position: absolute;
   top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
