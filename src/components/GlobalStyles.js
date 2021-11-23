@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
     }
     h1{
         font-weight: 400;
-        font-size: 36px;
+        font-size: 56px;
     }
     p{
         font-size: 14px;

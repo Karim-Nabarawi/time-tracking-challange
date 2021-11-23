@@ -5,6 +5,7 @@ import GlobalStyles from "./components/GlobalStyles";
 
 import Card from "./components/Card";
 import data from "./data.json";
+import Profile from "./components/Profile";
 
 function App() {
   console.log(data);
@@ -13,7 +14,7 @@ function App() {
       <GlobalStyles />
       <CardContainer>
         <div className="profile">
-          <Card />
+          <Profile />
         </div>
         {data && data.map((dat, index) => <Card key={index} {...dat} />)}
       </CardContainer>
@@ -25,13 +26,13 @@ export default App;
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 250px 250px 250px 250px;
   grid-gap: 30px;
 
   .profile {
     grid-row: 1 / 4;
     display: flex;
-    align-items: center;
+    width: 100%;
     margin-bottom: 30px;
   }
 `;

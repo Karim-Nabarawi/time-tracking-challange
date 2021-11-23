@@ -3,8 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { cartData } from "../cartData";
 
-import logo from "../images/icon-play.svg";
-
 const Card = ({ title, timeframes }) => {
   return (
     <CardContainer color={cartData[title] && cartData[title].color}>
