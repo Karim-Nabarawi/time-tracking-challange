@@ -25,6 +25,9 @@ const GlobalStyles = createGlobalStyle`
         padding: 100px 10%;
 
     }
+    html, body, #root {
+        height: 100%;
+    }
 
     h3{
         font-size: 18px;
@@ -37,6 +40,9 @@ const GlobalStyles = createGlobalStyle`
     p{
         font-size: 14px;
         font-weight: 300;
+    }
+    .app {
+        height: 100%;
     }
     
 `;

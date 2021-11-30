@@ -1,9 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import styled from "styled-components";
 import { cartData } from "../cartData";
 
 const Card = ({ title, timeframes }) => {
+  const { period } = useSelector((state) => state.period);
+  const time = {
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last month",
+  };
   return (
     <CardContainer color={cartData[title] && cartData[title].color}>
       <div className="imageContainer">
@@ -11,8 +18,10 @@ const Card = ({ title, timeframes }) => {
       </div>
       <DataContainer>
         <h3>{title}</h3>
-        <h1>{timeframes && timeframes["weekly"].current}hrs</h1>
-        <p>Last Week - {timeframes && timeframes["weekly"].previous}hrs</p>
+        <h1>{timeframes && timeframes[period].current}hrs</h1>
+        <p>
+          {time[period]} - {timeframes && timeframes[period].previous}hrs
+        </p>
       </DataContainer>
     </CardContainer>
   );

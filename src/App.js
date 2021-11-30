@@ -10,7 +10,7 @@ import Profile from "./components/Profile";
 function App() {
   console.log(data);
   return (
-    <div className="App">
+    <MainContainer>
       <GlobalStyles />
       <CardContainer>
         <div className="profile">
@@ -18,14 +18,21 @@ function App() {
         </div>
         {data && data.map((dat, index) => <Card key={index} {...dat} />)}
       </CardContainer>
-    </div>
+    </MainContainer>
   );
 }
 
 export default App;
 
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
 const CardContainer = styled.div`
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 250px 250px 250px 250px;
   grid-gap: 30px;
 
